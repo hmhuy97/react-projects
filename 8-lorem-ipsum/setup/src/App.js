@@ -6,8 +6,15 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(count);
-    setText(data);
+    let amount = parseInt(count);
+    if (count <= 0) {
+      amount = 1;
+    }
+    if (count > 8) {
+      amount = data.length;
+    }
+
+    setText(data.slice(0, amount));
   };
   return (
     <section className="section-center">
